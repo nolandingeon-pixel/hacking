@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Site Test - Niveau 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #121212; color: #fff; text-align: center; padding: 50px; }
+        nav { margin-bottom: 30px; }
+        nav a { color: #00ffcc; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .box { background: #1e1e1e; padding: 20px; border-radius: 8px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Projets</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="box">
+        <h1>Bienvenue sur mon site (Niveau 1)</h1>
+        <p>Zone de test non sécurisée :</p>
+        
+        <!-- Un formulaire simpliste qui réinjecte directement ce qu'on tape -->
+        <form method="GET" action="">
+            <input type="text" name="recherche" placeholder="Tape un truc ici..." style="padding: 8px; width: 250px;">
+            <button type="submit" style="padding: 8px;">Tester</button>
+        </form>
+
+        <div id="resultat" style="margin-top: 20px; color: #ff5555;">
+            <!-- Le site affiche bêtement ce que l'utilisateur tape -->
+            <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const val = urlParams.get('recherche');
+                if (val) {
+                    document.write("Résultat pour : " + val);
+                }
+            </script>
+        </div>
+    </div>
+
+</body>
+</html>
